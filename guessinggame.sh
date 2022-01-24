@@ -1,22 +1,22 @@
-#!/user/bin/env bash
+#!/usr/bin/env bash
 
-function ask{
+function ask {
         echo "How many files are in the current directory?"
-        read input
-    file=$(ls -1 | wc -1)
+        read guess
+    files=$(ls -1 | wc -l)
 }
 
 ask
 
-while [[ $input -ne $file ]]
+while [[ $guess -ne $files ]]
 do
-          if [[ $input -lt $file ]]
-          then
-                  echo "The input is smaller than the file number."
-          else
-                  echo "The input is bigger than the file number."
-          fi
-          ask
+        if [[ $guess -lt $files ]]
+        then
+                echo "It's a little small."
+        else
+                echo "It's bigger than the real case."
+        fi
+        ask
 done
 
-echo "Congratulations! You have the answer right! "
+echo "Congratulations! You've got the right answer."

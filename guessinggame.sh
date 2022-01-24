@@ -8,7 +8,7 @@ function ask{
 
 ask
 
-while [[ $guess -ne $file ]]
+while [[ $input -ne $file ]]
 do
           if [[ $input -lt $file ]]
           then
